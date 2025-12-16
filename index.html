@@ -1,0 +1,17 @@
+<h2>ROS Code Checker</h2>
+<form method="post" enctype="multipart/form-data">
+<input type="file" name="zipfile">
+<input type="submit">
+</form>
+
+
+{% if report %}
+<h3>Report</h3>
+<pre>{{ report }}</pre>
+{% endif %}
+
+
+{% if sim %}
+<h3>Simulation Result</h3>
+<pre>{{ sim }}</pre>
+{% endif %}
