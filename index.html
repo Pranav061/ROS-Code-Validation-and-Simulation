@@ -1,15 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ROS Code Checker (CoppeliaSim)</title>
+</head>
+<body>
+<h2>ROS Code Checker & CoppeliaSim Preview Tool</h2>
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="zipfile" required>
+<br><br>
+<button type="submit">Upload & Validate</button>
+</form>
+
+<hr>
+
+{% if report %}
+<h3>Code Check Report</h3>
+<pre>{{ report }}</pre>
+{% endif %}
+
+{% if sim %}
+<h3>Simulation Result</h3>
+<pre>{{ sim }}</pre>
+
+<h4>Simulation Snapshot</h4>
+<img src="/results/frame.png" width="400">
+{% endif %}
+
+</body>
+</html>
+```html
 <h2>ROS Code Checker</h2>
 <form method="post" enctype="multipart/form-data">
 <input type="file" name="zipfile">
 <input type="submit">
 </form>
 
-
 {% if report %}
 <h3>Report</h3>
 <pre>{{ report }}</pre>
 {% endif %}
-
 
 {% if sim %}
 <h3>Simulation Result</h3>
